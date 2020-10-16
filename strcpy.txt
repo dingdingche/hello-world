@@ -1,12 +1,12 @@
-#include <stdio.h>
-char* strcpy(char *strDest, const char* strSrc)
+char* StrCpy(char* src)
 {
-    char *p=NULL;
-    if(strDest == NULL || strSrc == NULL)
-    {
-        return NULL;
-    }
-    p = strDest;
-    while((*strDest++ = *strSrc ++) != '\0');
-    return p;
+int len=strlen(src);
+char *d=(char*)malloc(len+1);
+while(len--!=0){
+*d=*src;
+d++;
+src++;
+}
+d[len]='\0';
+return d;
 }
